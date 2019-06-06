@@ -1,0 +1,9 @@
+data:
+- {bond0: bond0, bond_primary: enp0s3, bond_secondary: enp0s8, gateway: 192.168.33.1,
+  hostname: web1, ip_address: 192.168.33.111, netmask: 255.255.255.0}
+- {bond0: bond0, bond_primary: enp0s3, bond_secondary: enp0s8, gateway: 192.168.33.1,
+  hostname: web2, ip_address: 192.168.33.112, netmask: 255.255.255.0}
+- {bond0: bond1, bond_primary: enp0s3, bond_secondary: enp0s5, gateway: 192.168.34.1,
+  hostname: db1, ip_address: 192.168.34.211, netmask: 255.255.255.0}
+- {bond0: bond1, bond_primary: enp0s3, bond_secondary: enp0s5, gateway: 192.168.34.1,
+  hostname: db2, ip_address: 192.168.34.212, netmask: 255.255.255.0}

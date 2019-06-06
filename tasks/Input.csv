@@ -1,0 +1,5 @@
+hostname,ip_address,netmask,gateway,bond0,bond_primary,bond_secondary
+web1,192.168.33.111,255.255.255.0,192.168.33.1,bond0,enp0s3,enp0s8
+web2,192.168.33.112,255.255.255.0,192.168.33.1,bond0,enp0s3,enp0s8
+db1,192.168.34.211,255.255.255.0,192.168.34.1,bond1,enp0s3,enp0s5
+db2,192.168.34.212,255.255.255.0,192.168.34.1,bond1,enp0s3,enp0s5

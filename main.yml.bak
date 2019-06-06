@@ -1,0 +1,27 @@
+---
+- hosts: all
+  connection: local
+  become: false
+  gather_facts: false
+  tasks:
+    - name: parse csv and make vars file
+      command: "python ./modules/csv_to_yaml.py tasks/Input.csv"
+ 
+- hosts: all
+  connection: local
+  become: false
+  gather_facts: false
+  vars_files:
+    - group_vars/all.yml
+  tasks:
+    - debug: var=data
+
+- hosts: all
+  connection: local
+  vars_files:
+    - group_vars/all.yml
+  tasks:
+    - name: Host Based Kickstart File
+      template:
+        src: templates/kickstart.cfg.j2
+        dest: "{{ playbook_dir }}/staging/{{ inventory_hostname }}.kickstart.cfg"

@@ -1,0 +1,12 @@
+{% for host in data %}
+{% if inventory_hostname in host.hostname %} 
+
+# Use network installation
+url --url="http://192.168.1.5/cblr/links/{{host.hostname}}.kickstart.cfg"
+
+
+network --bootproto=static --hostname={{host.hostname}} --device={{host.bond0}} --gateway={{host.gateway}} --ip={{host.ip_address}} --netmask={{host.netmask}} --noipv6 --nodns --onboot=on --activate --bondopts=mode=active-backup,miimon=100,updelay=1000,downdelay=1000,primary={{host.bond_primary}} --bondslaves={{host.bond_primary}},{{host.bond_secondary}}
+
+
+{% endif %}
+{% endfor %}
